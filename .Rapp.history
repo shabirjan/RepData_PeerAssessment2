@@ -1,0 +1,310 @@
+p <- xylot(Ozone~Wind | factor(Month),data=airquality)
+p <- xyplot(Ozone~Wind | factor(Month),data=airquality)
+qplot(Wind,Ozone,data=airquality,facets = .~factor(Month))
+library(ggplot2)
+qplot(Wind,Ozone,data=airquality,facets = .~factor(Month))
+qplot(Wind,Ozone,data=airquality)
+aiqualtiy = transform(airquality,Month=factor(Month))
+qplot(Wind,Ozone,data=aiquality,facets= .~Month)
+qplot(Wind,Ozone,data= aiqualtiy,facets= .~Month)
+g <- ggplot(movies,aes(votes,rating))
+print(g)
+qplot(votes,rating,data=movies) +geom_smooth*
+()
+qplot(votes,rating,data=movies) +geom_smooth()
+qplot(votes,rating,data=movies) +stats_smooth("loess")
+library(kernlab)
+data(spam)
+set.seed(3435)
+trainIndicator = rbinom(4601,size=1,prob=0.5)
+table(trainIndicator)
+trainSpam = spam[trainIndicator==1,]
+trainTest = spam[trainIndicator==0,]
+hCluster <- hclust(dist(trainSpam[,1:57]))
+plot(hCluster)
+hCluster <- hclust(t(dist(trainSpam[,1:57])))
+plot(hCluster)
+hCluster <- hclust(dist(t(trainSpam[,1:57])))
+plot(hCluster)
+x <- c(-0.5,0,0,1,1,1.5)
+y <- c(0,,0,2,0,0)
+y <- c(0,0,2,0,0)
+plot(x,y, lwd=3,frame=F,type="l")
+x <- c(-0.5,0,1,1,1.5)
+plot(x,y, lwd=3,frame=F,type="l")
+pbeta(0.75,2,1)
+?qbeta
+qbeta(0.5,2,1)
+library(manipulate)
+?qunit
+qunif
+?qunif
+qunif(0,1)
+qunif(0.75)
+x <- 1:4
+p <- x/sum(x)
+temp <- rbind(x,p)
+rownames(temp) <- c("X","Prob")
+temp
+mean(temp)
+mean <- sum(temp[1,]*temp[2,])
+mean
+library(swirl)
+install_from_swirl("Statistical Inference")
+swirl()
+?answ3
+answ3
+value2 <- 70
+mean2 <- 80
+sd2 <- 10
+answ2 <- pnorm(value2,mean2,sd2)
+answ2
+round(answ2,3)
+round(answ2,2)
+quantil3 <- 0.95
+mean3 <- 1100
+sd3 <- 75
+answ3 <- qnorm(quantil3,mean3,sd3)
+answ3
+mean4 <- 1100
+sd4 <- 75
+n4 <-100
+var4 <- sd4/sqrt(n4)
+quantile4 <- 1.645
+answ4 <- mean4+(var4*quantile4)
+answ4
+prob4<- choose(5,4)*0.5^4*(1-0.5)^1
+prob5<- choose(5,5)*0.5^5*(1-0.5)^0
+answ5 <- prob4+prob5
+round(answ5,2)
+mean6 <- 15
+sd6 <- 10
+value6a <- (14-mean6) / (sd6/sqrt(100))
+pl4 <- pnorm(value6)
+pl4 <- pnorm(value6a)
+value6b <- (16-mean6)/(sd6/sqrt(100))
+pl6 <- pnorm(value6b)
+answ6 <- pl6-pl4
+round(answ6,2)
+?aggregate
+library(ggplot)
+library(ggplot2)
+?ggplot
+?geom_bar
+getwd()
+NEI <- readRDS("./data/summarySCC_PM25.rds")
+SSC <- readRDS("./data/Source_Classification_Code.rds")
+head(NEI)
+head(SSC)
+NEI_SSC <- merge(NEI,SCC,by="SCC")
+names(NEI)
+names(SSC)
+NEI_SSC <- merge(NEI,SCC,by="SCC")
+?merge
+NEISCC <- merge(NEI, SSC, by="SCC")
+coalSources <- grepl("coal",NEI_SC$Short.Name,ignore.case=TRUE)
+coalSources <- grepl("coal",NEISCC$Short.Name,ignore.case=TRUE)
+NEISSCCoal <- NEI_SSC[coalSources,]
+NEISSCCoal <- NEISCSC[coalSources,]
+NEISSCCoal <- NEISCC[coalSources,]
+coalEmissionsDataYear <- tapply(NEISSCCoal$Emissions,NEISSCCoal$year,sum)
+class(coalEmissionsDataYear)
+coalEmissionsDataYear <- aggregate(Emissions ~ year, subsetNEISCC, sum)
+coalEmissionsDataYear <- aggregate(Emissions ~ year, NEISSCCoal, sum)
+class(coalEmissionsDataYear)
+library(ggplot2)
+?ggplot
+?geom_bar
+NEI <- readRDS("./data/summarySCC_PM25.rds")
+head(NEI)
+bcityPMData <- NEI[NEI$fips=="24510" && NEI$type=="ON-ROAD".]
+bcityPMData <- NEI[NEI$fips=="24510" && NEI$type=="ON-ROAD",]
+head(bcityPMData)
+NEI$type
+bcityPMData <- NEI[NEI$fips == "24510",]
+head(bcityPMData)
+bcityPMData$type
+bcityPMData <- NEI[NEI$fips=="24510" && NEI$type=="ON-ROAD",]
+bcityPMData
+bcityPMData <- subset(NEI,fips=="24510", & type=="ON-ROAD")
+bcityPMData <- subset(NEI,fips=="24510" & type=="ON-ROAD")
+HEAD(bcityPmData)
+head(bcityPMData)
+bcityPMData <- NEI[NEI$fips=="24510" & NEI$type=="ON-ROAD",]
+head(bcityPMData)
+NEI <- readRDS("./data/summarySCC_PM25.rds");#
+        bcityPMData <- NEI[NEI$fips=="24510" & NEI$type=="ON-ROAD",]
+head(bcityPMData)
+bcityPMDataByYear <- aggregate(Emissions-year,bcityPMData,sum)
+bcityPMDataByYear <- aggregate(Emissions-year, bcityPMData,sum)
+bcityPMDataByYear <- aggregate(Emissions~year, bcityPMData,sum)
+names(bcityPMDataByYear)
+head(NEI)
+NEI$year <- factor(NEI$year,levels=c("1999","2002","2005","2008"))
+head(NEI)
+MD.onroad <- subset(NEI,fips== "24510" & type == "ON-ROAD")
+head(MD.onroad)
+class(MD.onroad)
+MD.df <- aggregate(MD.onroad[,"Emissions"],by=list(MD.onroad$year),sum)
+class(MD.df)
+head(MD.df)
+head(bcityPMDataByYear)
+colnames(MD.df) <- c("year","Emissions")
+library(ggplot2)
+ggp <- ggplot(MD.df,aes(x=year,y=Emissions)) +
+geom_bar(aes(fill=year))
+print(ggp)
+ggp <- ggplot(MD.df,aes(x=year,y=Emissions)) +
+geom_bar(aes(fill=year)) +
+guides(fill=F) +
+ggtitle("hello")
+print(ggp)
+ggplot(data=MD.df, aes(x=year, y=Emissions)) + geom_bar(aes(fill=year)) + guides(fill=F) + #
+    ggtitle('Total Emissions of Motor Vehicle Sources in Baltimore City, Maryland') + #
+    ylab(expression('PM'[2.5])) + xlab('Year') + theme(legend.position='none') + #
+    geom_text(aes(label=round(Emissions,0), size=1, hjust=0.5, vjust=2))
+ggplot(data=bcityPMDataByYear, aes(x=year, y=Emissions)) + geom_bar(aes(fill=year)) + guides(fill=F) + #
+    ggtitle('Total Emissions of Motor Vehicle Sources in Baltimore City, Maryland') + #
+    ylab(expression('PM'[2.5])) + xlab('Year') + theme(legend.position='none') + #
+    geom_text(aes(label=round(Emissions,0), size=1, hjust=0.5, vjust=2))
+ggplot(data=bcityPMDataByYear, aes(x=year, y=Emissions)) + geom_bar(aes(fill=year),stat="identity") + guides(fill=F) + #
+    ggtitle('Total Emissions of Motor Vehicle Sources in Baltimore City, Maryland') + #
+    ylab(expression('PM'[2.5])) + xlab('Year') + theme(legend.position='none') + #
+    geom_text(aes(label=round(Emissions,0), size=1, hjust=0.5, vjust=2))
+ggplot(data=bcityPMDataByYear, aes(x=year, y=Emissions)) + geom_bar(aes(fill=year),stat="identity") + guides(fill=T) + #
+    ggtitle('Total Emissions of Motor Vehicle Sources in Baltimore City, Maryland') + #
+    ylab(expression('PM'[2.5])) + xlab('Year') + theme(legend.position='none') + #
+    geom_text(aes(label=round(Emissions,0), size=1, hjust=0.5, vjust=2))
+ggplot(data=bcityPMDataByYear, aes(x=year, y=Emissions)) + geom_bar(aes(fill=year),stat="identity") + guides(fill=T) + #
+    ggtitle('Total Emissions of Motor Vehicle Sources in Baltimore City, Maryland') + #
+    ylab(expression('PM'[2.5])) + xlab('Year') + theme(legend.position='none')
+ggplot(data=bcityPMDataByYear, aes(x=year, y=Emissions)) + geom_bar(aes(fill=year),stat="bin") + guides(fill=F) + #
+    ggtitle('Total Emissions of Motor Vehicle Sources in Baltimore City, Maryland') + #
+    ylab(expression('PM'[2.5])) + xlab('Year') + theme(legend.position='none') + #
+    geom_text(aes(label=round(Emissions,0), size=1, hjust=0.5, vjust=2))
+ggplot(data=bcityPMDataByYear, aes(x=year, y=Emissions)) + geom_bar(aes(fill=year),stat="identity") + guides(fill=F) + #
+    ggtitle('Total Emissions of Motor Vehicle Sources in Baltimore City, Maryland') + #
+    ylab(expression('PM'[2.5])) + xlab('Year') + theme(legend.position='none') + #
+    geom_text(aes(label=round(Emissions,0), size=1, hjust=0.5, vjust=2))
+ggplot(data=bcityPMDataByYear, aes(x=year, y=Emissions)) + geom_bar(stat="identity") + guides(fill=F) + #
+    ggtitle('Total Emissions of Motor Vehicle Sources in Baltimore City, Maryland') + #
+    ylab(expression('PM'[2.5])) + xlab('Year') + theme(legend.position='none') + #
+    geom_text(aes(label=round(Emissions,0), size=1, hjust=0.5, vjust=2))
+ggplot(data=bcityPMDataByYear, aes(x=year, y=Emissions)) + geom_bar(aes(fill=year),stat="identity") + guides(fill=F) + #
+    ggtitle('Total Emissions of Motor Vehicle Sources in Baltimore City, Maryland') + #
+    ylab(expression('PM'[2.5])) + xlab('Year') + theme(legend.position='none') + #
+    geom_text(aes(label=round(Emissions,0), size=1, hjust=0.5, vjust=2))
+?geom_text
+?geom_bar
+ggplot(data=bcityPMDataByYear, aes(x=year, y=Emissions)) + geom_bar(aes(fill=year),stat="identity",colour="green") + guides(fill=F) + #
+    ggtitle('Total Emissions of Motor Vehicle Sources in Baltimore City, Maryland') + #
+    ylab(expression('PM'[2.5])) + xlab('Year') + theme(legend.position='none') + #
+    geom_text(aes(label=round(Emissions,0), size=1, hjust=0.5, vjust=2))
+ggplot(data=bcityPMDataByYear, aes(x=year, y=Emissions))  + guides(fill=F) + #
+    ggtitle('Total Emissions of Motor Vehicle Sources in Baltimore City, Maryland') + #
+    ylab(expression('PM'[2.5])) + xlab('Year') + theme(legend.position='none') + #
+    geom_text(aes(label=round(Emissions,0), size=1, hjust=0.5, vjust=2))
+ggplot(data=bcityPMDataByYear, aes(x=year, y=Emissions)) + geom_bar(aes(fill=year),stat="identity",colour="green") + guides(fill=F) + #
+    ggtitle('Total Emissions of Motor Vehicle Sources in Baltimore City, Maryland') + #
+    ylab(expression('PM'[2.5])) + xlab('Year') + theme(legend.position='none') + #
+    geom_text(aes(label=round(Emissions,0), size=1, hjust=0.5, vjust=2))
+?geom
+?geom_bar
+?aes
+ggplot(data=bcityPMDataByYear, aes(x=year, y=Emissions)) + geom_bar(aes(fill=year,colour="green"),stat="identity") + guides(fill=F) + #
+    ggtitle('Total Emissions of Motor Vehicle Sources in Baltimore City, Maryland') + #
+    ylab(expression('PM'[2.5])) + xlab('Year') + theme(legend.position='none') + #
+    geom_text(aes(label=round(Emissions,0), size=1, hjust=0.5, vjust=2))
+ggplot(data=bcityPMDataByYear, aes(x=year, y=Emissions)) + geom_bar(aes(fill=year,colour="green"),stat="identity") + guides(fill=F) + #
+    ggtitle('Total Emissions of Motor Vehicle Sources in Baltimore City, Maryland') + #
+    ylab(expression('PM'[2.5])) + xlab('Year') + theme(legend.position='none') + #
+    geom_text(aes(label=round(Emissions,0), size=1, hjust=1, vjust=2))
+ggplot(data=bcityPMDataByYear, aes(x=year, y=Emissions)) + geom_bar(aes(fill=year,colour="green"),stat="identity") + guides(fill=F) + #
+    ggtitle('Total Emissions of Motor Vehicle Sources in Baltimore City, Maryland') + #
+    ylab(expression('PM'[2.5])) + xlab('Year') + theme(legend.position='none') + #
+    geom_text(aes(label=round(Emissions,0), size=1, hjust=1, vjust=0))
+ggplot(data=bcityPMDataByYear, aes(x=year, y=Emissions)) + geom_bar(aes(fill=year,colour="green"),stat="identity")  + #
+    ggtitle('Total Emissions of Motor Vehicle Sources in Baltimore City, Maryland') + #
+    ylab(expression('PM'[2.5])) + xlab('Year') + theme(legend.position='none') + #
+    geom_text(aes(label=round(Emissions,0), size=1, hjust=1, vjust=0))
+ggplot(data=bcityPMDataByYear, aes(x=year, y=Emissions)) + geom_bar(aes(fill=year,colour="green"),stat="identity")  + #
+    ggtitle('Total Emissions of Motor Vehicle Sources in Baltimore City, Maryland') + #
+    ylab(expression('PM'[2.5])) + xlab('Year') + #
+    geom_text(aes(label=round(Emissions,0), size=1, hjust=1, vjust=0))
+cat("\014")
+cat("\014")cat("\014")
+cat("\014")
+ccityPMData <- NEI[NEI$fips=="06037" & NEI$type=="ON-ROAD",]
+head(ccityPMData)
+bcityPMDataByYear <- aggregate(Emissions ~ year, bcityPMData, sum)
+ccityPMDataByYear <- aggregate(Emissions ~ year,ccityPMData,sum)
+head(bcityPMDataByYear)
+head(ccityPMDataByYear)
+bcityPMDataByYear$city <- paste(rep("Baltimore",4))
+head(bcityPMDataByYear)
+ccityPMDataByYear$city <- paste(rep("California",4))
+bothData <- rbind(bcityPMDataByYear,ccityPMDataByYear)
+head(bothData)
+class(bothData)
+ggplot(data=bothData, aes(x=year, y=Emissions)) + geom_bar(aes(fill=year)) + guides(fill=F) + #
+    ggtitle('Total Emissions of Motor Vehicle Sources\nLos Angeles County, California vs. Baltimore City, Maryland') + #
+    ylab(expression('PM'[2.5])) + xlab('Year') + theme(legend.position='none') + facet_grid(. ~ City) + #
+    geom_text(aes(label=round(Emissions,0), size=1, hjust=0.5, vjust=-1))
+bothData
+ggplot(data=bothData, aes(x=year, y=Emissions)) + geom_bar(aes(fill=year),stat="identity") + guides(fill=F) + #
+    ggtitle('Total Emissions of Motor Vehicle Sources\nLos Angeles County, California vs. Baltimore City, Maryland') + #
+    ylab(expression('PM'[2.5])) + xlab('Year') + theme(legend.position='none') + facet_grid(. ~ City) + #
+    geom_text(aes(label=round(Emissions,0), size=1, hjust=0.5, vjust=-1))
+ggplot(data=bothData, aes(x=year, y=Emissions)) + geom_bar(aes(fill=year),stat="identity") + guides(fill=F) + #
+    ggtitle('Total Emissions of Motor Vehicle Sources\nLos Angeles County, California vs. Baltimore City, Maryland') + #
+    ylab(expression('PM'[2.5])) + xlab('Year') + theme(legend.position='none') + facet_grid(. ~ city) + #
+    geom_text(aes(label=round(Emissions,0), size=1, hjust=0.5, vjust=-1))
+swirl()
+library(swirl)
+swirl()
+1
+11/12
+deck
+52
+3/52
+4/52
+5/52
+4/52
+4/5
+5/4
+4*5/52
+0
+4/2
+12/52
+11*3/51
+11*2/52
+2/52
+2/3
+1/2
+1/3
+2/51
+sessionInfo()
+xbar <- 1100
+s <- 30
+n <- 9
+alpha <- 0.5
+?qt
+ts <- qt(1-alpha /2, n-2)
+ts
+round(xbar + c(-1,1) * ts * s/sqrt(n))
+ts <- qt(1-alpha /2, n-1)
+ts
+alpha <- 0.05
+ts <- qt(1-alpha /2, n-1)
+ts
+round(xbar + c(-1,1) * ts * s/sqrt(n))
+xbar <- -2
+n <- 9
+alpha = 0.0f
+alpha = 0.05
+ts <- qt(1-alpha/2, n-1)
+ts
+s <- -xbar*sqrt(n)/ts
+s
+data <- read.csv("./data/stormData.csv")
+data <- read.csv("./data/stormData.csv")
